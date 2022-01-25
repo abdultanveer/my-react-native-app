@@ -7,6 +7,9 @@ export default function App() {
   const [name,setName] = useState('abdul')
   const [person, setPerson] = useState({name: 'tanveer', age: 123})
 
+  const [age,setAge] = useState('30')
+
+
   const clickHandler = () => {
     setName('ansari')
   }
@@ -14,9 +17,19 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>My name is {name}</Text>
-      <Text>his name is {person.name} and his age is  {person.age}</Text>
-      <TextInput style={styles.input}
-      placeholder = 'enter name'/>
+      <Text>his name is {person.name} and his age is  {age}</Text>
+      <TextInput 
+      style={styles.input}
+      placeholder = 'enter name'
+      onChangeText = {(val) => setName(val)}
+      />
+
+      <TextInput 
+      keyboardType = 'numeric'
+      style={styles.input}
+      placeholder = 'enter age eg 99'
+      onChangeText = {(val) => setAge(val)}
+      />
       <Button title = 'update state'  onPress = {clickHandler}/>
     </View>
     
