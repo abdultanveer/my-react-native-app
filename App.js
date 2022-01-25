@@ -1,48 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Button, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import SectionListBasics from './components/SectionListBasics';
+import FlatListBasics from './components/FlatListBasics';
 
 export default function App() {
 
-  const [people, setPeople] = useState(
-    [
-      { name: 'abdul', key: '1' },
-      { name: 'ansari', key: '2' },
-      { name: 'abhinav', key: '3' },
-      { name: 'niket', key: '4' },
-      { name: 'harshit', key: '5' },
-      { name: 'abdul', key: '6' },
-      { name: 'ansari', key: '7' },
-      { name: 'abhinav', key: '8' },
-      { name: 'niket', key: '9' },
-      { name: 'harshit', key: '10' },
-      { name: 'abdul', key: '11' },
-      { name: 'ansari', key: '12' },
-      { name: 'abhinav', key: '13' },
-      { name: 'niket', key: '14' },
-      { name: 'harshit', key: '15' },
-
-    ]
-  )
+ 
 
   return (
     <View style={styles.container}>
-    <ScrollView>
-      {
-        people.map((item) => {
-          return (
-            <View key={item.key}>
-              <Text style = {styles.item}>{item.name}</Text>
-            </View>
-          )
-        }
-        )}
-        </ScrollView>
+      <SectionListBasics/>
+      <FlatListBasics/>
 
     </View>
 
-  );
-}
+  );}
 
 const styles = StyleSheet.create({
   container: {
