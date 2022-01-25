@@ -1,12 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
+
+  const [name,setName] = useState('abdul')
+  const [person, setPerson] = useState({name: 'tanveer', age: 123})
+
+  const clickHandler = () => {
+    setName('ansari')
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text>My name is {name}</Text>
+      <Text>his name is {person.name} and his age is  {person.age}</Text>
+      <TextInput style={styles.input}
+      placeholder = 'enter name'/>
+      <Button title = 'update state'  onPress = {clickHandler}/>
     </View>
+    
   );
 }
 
@@ -17,4 +30,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  boxStyle : {
+    width: 50, height: 50, backgroundColor: 'powderblue'
+  },
+  input: {
+    border: '1px solid',
+    borderColor: 'blue',
+    padding: 8,
+  }
 });
